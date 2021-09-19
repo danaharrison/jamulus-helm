@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: jamulus-lb
+spec:
+ type: LoadBalancer 
+ selector:
+  app: jamulus
+ ports:
+  - name: "{{ .Values.containerPort }}"
+    protocol: UDP
+    port: {{ .Values.containerPort }}
+    targetPort: {{ .Values.containerPort }}

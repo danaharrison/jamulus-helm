@@ -1,0 +1,5 @@
+containerPort: 22124
+#Set this to whatever you like
+maxUsers: 15
+#Set this to whatever you like
+serverMessage: Welcome message goes here!

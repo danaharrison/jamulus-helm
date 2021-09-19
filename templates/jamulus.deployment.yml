@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: jamulus
+ labels:
+  app: jamulus
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: jamulus
+ template:
+  metadata:
+   labels:
+    app: jamulus
+  spec:
+   containers:
+   - name: jamulus
+     image: grundic/jamulus
+     ports:
+     - containerPort: {{ .Values.containerPort }}  
+     args:
+      - "-s"
+      - "-n"
+      - "-p"
+      - "{{ .Values.containerPort }}"
+      - "-w"
+      - "{{ .Values.serverMessage }}"
+      - "-u"
+      - "{{ .Values.maxUsers }}"
+      - "-T"
+     resources:
+      limits:
+       ephemeral-storage: 4G
