@@ -4,7 +4,7 @@ A Helm chart to deploy Jamulus Server into a LoadBalancer-enabled K8S environmen
 ## Usage
 This particular service is set up in an environment with LoadBalancer enabled, so that the Jamulus server can have its own IP assigned. At home, I'm using metallb and highly recommend it. You can just expose the port if you'd rather do without it.
 
-This implementation just logs to emptyDir by default, but you can mount a directory for logging if needed.
+This implementation logs to your host's /var/log directory by default, but can all be changed in values.yaml.
 
 ### Values YAML
 
