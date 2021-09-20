@@ -9,7 +9,9 @@ This implementation just logs to emptyDir by default, but you can mount a direct
 ### Values YAML
 
 containerPort: the port on which Jamulus will run and the port will be exposed to the service
+
 maxUsers: the maximum number of users able to connect to Jamulus at once
+
 serverMessage: the message shown to the user when connecting to the Jamulus server
 
 ## Credits

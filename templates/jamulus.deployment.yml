@@ -29,6 +29,13 @@ spec:
       - "-u"
       - "{{ .Values.maxUsers }}"
       - "-T"
-     resources:
-      limits:
-       ephemeral-storage: 4G
+      - "-l"
+      - "{{ .Values.containerLog }}"     
+     volumeMounts:
+     - mountPath: {{ .Values.containerMountPath }}
+       name: {{ .Values.containerMountName }}
+   volumes:
+   - name: {{ .Values.containerMountName }}
+     hostPath:
+      path: {{ .Values.localMountPath }}
+      type: Directory

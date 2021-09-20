@@ -3,3 +3,8 @@ containerPort: 22124
 maxUsers: 15
 #Set this to whatever you like
 serverMessage: Welcome message goes here!
+#Location in the container to which you're logging
+containerMountPath: /jam
+containerMountName: jam
+#Location on your filesystem to associate the /jam dir
+localMountPath: /var/log
