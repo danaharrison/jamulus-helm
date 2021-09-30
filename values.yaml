@@ -8,3 +8,4 @@ containerMountPath: /jam
 containerMountName: jam
 #Location on your filesystem to associate the /jam dir
 localMountPath: /var/log
+ephemeralStorage: 1G

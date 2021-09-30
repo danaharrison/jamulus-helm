@@ -34,6 +34,9 @@ spec:
      volumeMounts:
      - mountPath: {{ .Values.containerMountPath }}
        name: {{ .Values.containerMountName }}
+     resources:
+      limits:
+       ephemeral-storage: {{ .Values.ephemeralStorage }}
    volumes:
    - name: {{ .Values.containerMountName }}
      hostPath:
